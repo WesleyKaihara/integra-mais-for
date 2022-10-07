@@ -30,7 +30,7 @@ export default function Admininstrador(){
         
           {(ativos.length > 0)?
             ativos.map((funcionario) => (
-              <tr key={funcionario.MATRICULA} className={(funcionario.ANDAR !== process.env.ANDAR_ATUAL )?"sem-acesso":""}>
+              <tr key={funcionario.MATRICULA} className={(funcionario.ANDAR !== funcionario.ANDAR_ATUAL )?"sem-acesso":"acesso-permitido"}>
                 <td>{funcionario.MATRICULA} </td>
                 <td> {funcionario.NOME}</td>
                 <td>{funcionario.ANDAR} </td>
@@ -39,7 +39,7 @@ export default function Admininstrador(){
               </tr>
             ))
           :<tr>
-            <td></td>
+            <td colSpan="5">Nehum funcionário no local</td>
           </tr>}    
           </tbody>
           </table>

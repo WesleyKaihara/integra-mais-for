@@ -15,17 +15,25 @@ export default function Home() {
   }
 
 function ValidaRFID(RFID){
-    axios.post(`http://localhost:3000/movimentacao/cadastrar`,{
-      "RFID": RFID,
-      "ANDAR_ATUAL": 2,
-      "SITUACAO": 1
-    })
+
+  axios.get(`http://localhost:3000/movimentacao/isAtivo/${RFID}`)
+  .then(res => 
+      (res.data.length > 0)?
+      axios.put(`http://localhost:3000/movimentacao/atualizar`,{
+        "RFID": RFID
+      }):axios.post(`http://localhost:3000/movimentacao/cadastrar`,{
+          "RFID": RFID,
+          "ANDAR_ATUAL": 10,
+          "SITUACAO": 1
+        })
+      )
     axios.get(`http://localhost:3000/RFID/validar/${RFID}`)
     .then(res => setDados(res.data))
   }
 
   return (
     <div className='main'>
+      <a href="/administrador" className='info'>Ver informações</a>
       <section className='validacao'>
             <h1 className='title'>Validação RFID</h1>
             <input 
