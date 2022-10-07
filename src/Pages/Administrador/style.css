@@ -1,0 +1,28 @@
+.funcionarios th{
+  padding: 1em;
+  border: 1px solid #ccc;
+  font-weight: bold;
+}
+
+.funcionarios td{
+  padding: 1em;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.sem-acesso{
+  background: rgba(253, 4, 4, 0.24);
+}
+
+.administrador{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filtros{
+  width: 30%;
+}
+.tabela{
+  width: 70%;
+}
