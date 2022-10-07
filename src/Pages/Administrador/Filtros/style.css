@@ -1,23 +1,27 @@
 .filtros{
-  width: 100%;
-  height: 100px;
+  width: 15%;
+  height: 100vh;
   background:linear-gradient(150deg,#179a49,#193725);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 2em;
+  gap: 2em  ;
 }
 
 .filtros_title{
   font-size: 3em;
   color: #fff;
-  margin: 0 10%;
+  margin: 30% 10% 0;
 }
 
 .filtro_link{
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin: 0 10%;
   text-decoration: none;
+}
+
+.info_filtro{
+  color: #fff;
 }
 

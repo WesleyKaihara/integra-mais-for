@@ -18,15 +18,18 @@
   background: rgb(147, 255, 147);
 }
 
+.ausente{
+  background: rgb(233, 233, 233);
+}
 .administrador{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 1em;
 }
 
 .filtros{
   width: 30%;
 }
 .tabela{
-  width: 70%;
+  width: 80%;
+  margin-top: 3em;
 }

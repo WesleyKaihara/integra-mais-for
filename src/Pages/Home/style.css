@@ -65,6 +65,18 @@
   border: 1px solid rgb(253, 78, 78);
 }
 
+.noAcess{
+  background: rgba(249, 75, 75, 0.768);
+}
+
+.Acess-txt{
+  margin-top: 1em;
+}
+.noAcess-txt{
+  margin-top: 1em;
+  color: #fff;
+}
+
 .credenciais,.credenciais_invalidas{
   margin-top: .8em;
   padding: 0 .5em;

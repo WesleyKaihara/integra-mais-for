@@ -9,7 +9,8 @@ export default function Rotas() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} exact />
-        <Route path="/administrador" element={<Admininstrador />} exact />
+        <Route path="/administrador" element={<Admininstrador />}  />
+        <Route path="/administrador/:filtro" element={<Admininstrador />}  />
       </Routes>
     </Router>
 
