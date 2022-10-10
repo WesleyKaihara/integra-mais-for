@@ -71,10 +71,12 @@
 
 .Acess-txt{
   margin-top: 1em;
+  padding: 0 .5em;
 }
 .noAcess-txt{
   margin-top: 1em;
   color: #fff;
+  padding: 0 .5em;
 }
 
 .credenciais,.credenciais_invalidas{

@@ -34,6 +34,12 @@ function ValidaRFID(RFID){
       )
     axios.get(`http://localhost:3000/RFID/validar/${RFID}`)
     .then(res => setDados(res.data))
+
+    // axios.post(`http://localhost:3000/log/cadastrar`,{
+    //         "RFID": RFID,
+    //         "ANDAR_ATUAL": 10,
+    //         "SITUACAO": status
+    //       })
   }
 
   return (
@@ -52,6 +58,17 @@ function ValidaRFID(RFID){
               value={RFID}
               onChange={(e) => setRFID(e.target.value)}
               />
+              
+              {
+                (dados && dados.length > 0 && status)?<p className='credenciais'>Entrada </p>:(status !== null && dados && dados.length > 0)?<p  className='credenciais'>Saida</p>:null
+              }
+              
+              {
+                (dados && dados.length > 0 && dados[0].ANDAR !== andar_atual)? <p className='noAcess-txt'>{dados[0].NOME.split(" ")[0]} {dados[0].NOME.split(" ")[1]} não possui permissão para acessar o andar {andar_atual}</p>:null
+              }
+              {
+               (dados && dados.length > 0 && dados[0].ANDAR === andar_atual)? <p className='Acess-txt'>{dados[0].NOME.split(" ")[0]} {dados[0].NOME.split(" ")[1]} possui permissão para acessar o andar {andar_atual}</p>:null
+              }
               {
                 (dados && typeof dados[0] == "object")?(
                   <div className='dados_funcionario'>
@@ -69,15 +86,6 @@ function ValidaRFID(RFID){
               }
               {
                 (!dados)?<p className='credenciais'>Por favor , insira seu RFID</p>:null
-              }
-              {
-                (dados && dados.length > 0 && dados[0].ANDAR !== andar_atual)? <p className='noAcess-txt'>{dados[0].NOME.split(" ")[0]} {dados[0].NOME.split(" ")[1]} não possui permissão para acessar o andar {andar_atual}</p>:null
-              }
-              {
-               (dados && dados.length > 0 && dados[0].ANDAR === andar_atual)? <p className='Acess-txt'>{dados[0].NOME.split(" ")[0]} {dados[0].NOME.split(" ")[1]} possui permissão para acessar o andar {andar_atual}</p>:null
-              }
-              {
-                (status)?<p>Entrou no andar {andar_atual}</p>:(status !== null)?<p>Saiu do Prédio</p>:null
               }
           </section>
     </div>
